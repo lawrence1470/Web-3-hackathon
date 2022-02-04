@@ -4,7 +4,12 @@ import Navbar from "../components/Navbar";
 import Layout from "../components/Layout";
 
 const Wallet = () => {
-  const { authenticate, isAuthenticated } = useMoralis();
+  const { authenticate, isAuthenticated, isInitializing } = useMoralis();
+
+  if (isInitializing) {
+    return <div>Loading...</div>;
+  }
+
   if (!isAuthenticated) {
     return (
       <div>
