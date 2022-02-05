@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { uploadIPFS } from "./api/UploadIPFS";
 import Navbar from "../components/Navbar";
+import UploadSection from "../components/UploadSection";
+import Layout from "../components/Layout";
 
 const Upload = () => {
   const [selectedFile, setState] = useState<any>();
 
   const onFileChange = (event: any) => {
-    // Update the state
     setState({ selectedFile: event.target.files[0] });
   };
 
@@ -37,16 +38,10 @@ const Upload = () => {
   };
 
   return (
-    <div>
+    <Layout>
       <Navbar />
-      <div>
-        <div>
-          <input type="file" onChange={onFileChange} />
-        </div>
-        {fileData()}
-      </div>
-      <button onClick={() => uploadIPFS(selectedFile)}>Click to upload</button>
-    </div>
+      <UploadSection />
+    </Layout>
   );
 };
 
