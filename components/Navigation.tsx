@@ -7,9 +7,15 @@ const Navigation = () => {
       <Link href="/wallet">
         <a className="text-indigo-500 text-lg font-semibold">Wallet</a>
       </Link>
-      {/*<a href="#" className="text-indigo-500 text-lg font-semibold">*/}
-      {/*  Home*/}
-      {/*</a>*/}
+      <Link href="/mint">
+        <a className="text-indigo-500 text-lg font-semibold">Mint</a>
+      </Link>
+      <Link href="/collections">
+        <a className="text-indigo-500 text-lg font-semibold">Collections</a>
+      </Link>
+      <Link href="/upload">
+        <a className="text-indigo-500 text-lg font-semibold">Upload</a>
+      </Link>
       {/*<a*/}
       {/*  href="#"*/}
       {/*  className="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100"*/}
