@@ -1,23 +1,23 @@
-import * as fs from "fs";
 import axios from "axios";
 
 type Data = {
-  name: string;
-  description: string;
-  file_url: string;
+  chain: "polygon";
+  contract_address: string;
+  mint_to_address: string;
+  metadata_uri: string;
 };
 
-export const uploadMetaData = (data: Data) => {
-  console.log(data, "dataaaa");
+export const mintToContract = (data: Data) => {
   const options: any = {
     method: "POST",
-    url: "https://api.nftport.xyz/v0/metadata",
+    url: "https://api.nftport.xyz/v0/mints/customizable",
     headers: {
       "Content-Type": "application/json",
       Authorization: "cde81237-44e1-4ecd-80dd-fd12899ecfbf",
     },
     data: data,
   };
+
   return axios
     .request(options)
     .then(function (response) {

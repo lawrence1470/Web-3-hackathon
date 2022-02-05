@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { uploadIPFS } from "../pages/api/UploadIPFS";
 import { uploadMetaData } from "../pages/api/UploadMetaDataIPFS";
+import { mintToContract } from "../pages/api/MintToContract";
+import { getContractAddress } from "../pages/api/GetContractAddress";
 
 const UploadSection = () => {
   const [selectedFile, setState] = useState<any>();
@@ -12,10 +14,21 @@ const UploadSection = () => {
     e.preventDefault();
     const result: any = await uploadIPFS(selectedFile);
 
-    uploadMetaData({
+    const result2 = await uploadMetaData({
       name: "this is a test name",
       description: "testing",
       file_url: result.ipfs_url,
+    });
+
+    const { contract_address } = await getContractAddress(
+      "0x2dd2300092ff7a7ea9f76016f01e588fb3e51b454f47d5dbb421d6f3309cf4ca"
+    );
+
+    await mintToContract({
+      chain: "polygon",
+      contract_address,
+      metadata_uri: result2.metadata_uri,
+      mint_to_address: "0xDDE6123dD77F143254D44bf36Da1745e411Ffb2c",
     });
   };
 
