@@ -2,22 +2,24 @@ import React from "react";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 import Layout from "./Layout";
+import Link from "next/link";
 
 const Hero = () => {
   return (
     <Layout>
       <header className="flex justify-between items-center py-4 md:py-8 mb-8 md:mb-12 xl:mb-16">
         <Logo />
-        <Navigation />
+
+        <div className="flex items-center gap-12">
+          <Navigation />
+          <Link href="/wallet">
+            <a className="hidden lg:inline-block bg-black hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-white active:text-gray-700 text-sm md:text-base font-normal text-center rounded-lg outline-none transition duration-100 px-4 py-1 hover:cursor-pointer">
+              Wallet
+            </a>
+          </Link>
+        </div>
 
         {/*buttons - start*/}
-        <a
-          href="#"
-          className="hidden lg:inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
-        >
-          Contact Sales
-        </a>
-
         <button
           type="button"
           className="inline-flex items-center lg:hidden bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold rounded-lg gap-2 px-2.5 py-2"
@@ -40,35 +42,6 @@ const Hero = () => {
       </header>
 
       <section className="flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
-        {/*content - start*/}
-        <div className="xl:w-5/12 flex flex-col justify-center sm:text-center lg:text-left lg:py-12 xl:py-24">
-          <h1 className="text-black-800 text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">
-            Discover physical and digital artworks, receive NFTs to play with
-          </h1>
-
-          <p className="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">
-            The Oyster gather emerging artists, art collectors, and builders to
-            provide the creator toolbox of web3
-          </p>
-
-          <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
-            <a
-              href="#"
-              className="inline-block bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
-            >
-              Start now
-            </a>
-
-            <a
-              href="#"
-              className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
-            >
-              Take tour
-            </a>
-          </div>
-        </div>
-        {/*content - end*/}
-
         {/*image - start*/}
         <div className="xl:w-5/12 h-48 lg:h-auto bg-gray-100 overflow-hidden shadow-lg rounded-lg">
           <img
@@ -79,6 +52,26 @@ const Hero = () => {
           />
         </div>
         {/*image - end*/}
+
+        {/*content - start*/}
+        <div className="xl:w-5/12 flex flex-col sm:text-center lg:text-left lg:pb-12 xl:pb-24">
+          <div className="text-black md:text-md xl:text-lg font-light mb-4 md:mb-10">
+            <p>THE PLACE FOR DESIGN LOVERS.</p>
+            <p>SUPPORT YOUR FAVORITE DESIGNERS,</p>
+            <p>DISCOVER, AND BUY DESIGN OBJECTS LIKE NEVER BEFORE.</p>
+          </div>
+
+          <h1 className="text-black-800 text-2xl sm:text-3xl md:text-4xl font-normal mb-8 md:mb-12 pr-4">
+            DISCOVER AND BUY DESIGNER’S PIECES, COLLECT NFTS.
+          </h1>
+
+          <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5 hover:cursor-pointer">
+            <a className="text-black inline-block bg-white text-sm md:text-base font-light text-center outline-none transition duration-100 border-black border-b-2">
+              Discover
+            </a>
+          </div>
+        </div>
+        {/*content - end*/}
       </section>
     </Layout>
   );

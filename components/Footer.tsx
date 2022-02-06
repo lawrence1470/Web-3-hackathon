@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 mt-8 md:mt-12 xl:mt-16">
       <footer className="max-w-screen-2xl px-4 md:px-8 mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 lg:gap-8 pt-10 lg:pt-12 mb-16">
           <div className="col-span-full lg:col-span-2">
@@ -290,9 +290,9 @@ const Footer = () => {
           {/*nav - end */}
         </div>
 
-        {/*<div className="text-gray-400 text-sm text-center border-t border-gray-800 py-8">*/}
-        {/*  © 2021 - Present Flowrift. All rights reserved.*/}
-        {/*</div>*/}
+        <div className="text-gray-400 text-sm text-center border-t border-gray-800 py-8">
+          © 2022 - Present Oyster. All rights reserved.
+        </div>
       </footer>
     </div>
   );

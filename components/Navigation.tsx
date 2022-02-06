@@ -4,17 +4,14 @@ import Link from "next/link";
 const Navigation = () => {
   return (
     <nav className="hidden lg:flex gap-12">
-      <Link href="/wallet">
-        <a className="text-indigo-500 text-lg font-semibold">Wallet</a>
-      </Link>
       <Link href="/mint">
-        <a className="text-indigo-500 text-lg font-semibold">Mint</a>
+        <a className="text-gray-900 text-lg font-normal">Mint</a>
       </Link>
       <Link href="/collections">
-        <a className="text-indigo-500 text-lg font-semibold">Collections</a>
+        <a className="text-gray-900 text-lg font-normal">Collections</a>
       </Link>
       <Link href="/upload">
-        <a className="text-indigo-500 text-lg font-semibold">Upload</a>
+        <a className="text-gray-900 text-lg font-normal">Upload</a>
       </Link>
       {/*<a*/}
       {/*  href="#"*/}
